@@ -5,3 +5,4 @@
 Выполненные задания:
 
 1. OrderManager
+2. Dictionary

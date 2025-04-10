@@ -24,7 +24,7 @@
 
         try
         {
-            var lines = File.ReadAllLines( dictionaryFile );
+            string[] lines = File.ReadAllLines( dictionaryFile );
             foreach ( var line in lines )
             {
                 if ( string.IsNullOrWhiteSpace( line ) )
@@ -158,10 +158,11 @@
                     break;
             }
 
+            SaveDictionary();
+
             Console.WriteLine( "______________________________________________________________________________________" );
         }
 
-        SaveDictionary();
         Console.WriteLine( "Словарь сохранен. До свидания!" );
     }
 }

@@ -1,4 +1,4 @@
-using Accommodations.Models;
+п»їusing Accommodations.Models;
 
 namespace Accommodations.Commands;
 
@@ -7,9 +7,9 @@ public class FindBookingByIdCommand( IBookingService bookingService, Guid bookin
     public void Execute()
     {
         Booking? booking = bookingService.FindBookingById( bookingId );
-        //Вместо записи в консоль сделала выброс исключения
+        //Р’РјРµСЃС‚Рѕ Р·Р°РїРёСЃРё РІ РєРѕРЅСЃРѕР»СЊ СЃРґРµР»Р°Р»Р° РІС‹Р±СЂРѕСЃ РёСЃРєР»СЋС‡РµРЅРёСЏ
         if ( booking != null )
-            // Исправила вывод категории
+            // РСЃРїСЂР°РІРёР»Р° РІС‹РІРѕРґ РєР°С‚РµРіРѕСЂРёРё
             Console.WriteLine( $"Booking found: {booking.RoomCategory.Name} for User {booking.UserId}" );
         else
             throw new ArgumentException( "Booking not found." );

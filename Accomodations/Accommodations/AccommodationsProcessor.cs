@@ -1,4 +1,4 @@
-using System.Globalization;
+п»їusing System.Globalization;
 using Accommodations.Commands;
 using Accommodations.Dto;
 
@@ -45,7 +45,7 @@ public static class AccommodationsProcessor
         switch ( commandName )
         {
             case "book":
-                //Вместо записи в консоль сделала выброс исключения
+                //Р’РјРµСЃС‚Рѕ Р·Р°РїРёСЃРё РІ РєРѕРЅСЃРѕР»СЊ СЃРґРµР»Р°Р»Р° РІС‹Р±СЂРѕСЃ РёСЃРєР»СЋС‡РµРЅРёСЏ
                 if ( parts.Length != 6 )
                 {
                     throw new ArgumentException( "Invalid number of arguments for booking." );
@@ -56,7 +56,7 @@ public static class AccommodationsProcessor
                     throw new ArgumentException( $"Invalid currency {parts[ 5 ]}." );
                 }
 
-                // Добавила проверку даты на валидность
+                // Р”РѕР±Р°РІРёР»Р° РїСЂРѕРІРµСЂРєСѓ РґР°С‚С‹ РЅР° РІР°Р»РёРґРЅРѕСЃС‚СЊ
                 if ( !DateTime.TryParse( parts[ 3 ], out startDate ) )
                 {
                     throw new ArgumentException( "Invalid start date format." );
@@ -83,13 +83,13 @@ public static class AccommodationsProcessor
                 break;
 
             case "cancel":
-                // Вместо записи в консоль сделала выброс исключения
+                // Р’РјРµСЃС‚Рѕ Р·Р°РїРёСЃРё РІ РєРѕРЅСЃРѕР»СЊ СЃРґРµР»Р°Р»Р° РІС‹Р±СЂРѕСЃ РёСЃРєР»СЋС‡РµРЅРёСЏ
                 if ( parts.Length != 2 )
                 {
                     throw new ArgumentException( "Invalid number of arguments for canceling." );
                 }
 
-                // Добавила проверку id бронирования
+                // Р”РѕР±Р°РІРёР»Р° РїСЂРѕРІРµСЂРєСѓ id Р±СЂРѕРЅРёСЂРѕРІР°РЅРёСЏ
 
                 if ( !Guid.TryParse( parts[ 1 ], out Guid bookingId ) )
                 {
@@ -103,7 +103,7 @@ public static class AccommodationsProcessor
                 break;
 
             case "undo":
-                // Добавила обработку ситуации, когда лист команд пуст
+                // Р”РѕР±Р°РІРёР»Р° РѕР±СЂР°Р±РѕС‚РєСѓ СЃРёС‚СѓР°С†РёРё, РєРѕРіРґР° Р»РёСЃС‚ РєРѕРјР°РЅРґ РїСѓСЃС‚
                 if ( _executedCommands.Count == 0 )
                 {
                     throw new InvalidOperationException( "User command history is empty" );
@@ -115,7 +115,7 @@ public static class AccommodationsProcessor
 
                 break;
             case "find":
-                // Вместо записи в консоль сделала выброс исключения
+                // Р’РјРµСЃС‚Рѕ Р·Р°РїРёСЃРё РІ РєРѕРЅСЃРѕР»СЊ СЃРґРµР»Р°Р»Р° РІС‹Р±СЂРѕСЃ РёСЃРєР»СЋС‡РµРЅРёСЏ
                 if ( parts.Length != 2 )
                 {
                     throw new ArgumentException( "Invalid arguments for 'find'. Expected format: 'find <BookingId>'" );
@@ -126,7 +126,7 @@ public static class AccommodationsProcessor
                 break;
 
             case "search":
-                // Вместо записи в консоль сделала выброс исключения
+                // Р’РјРµСЃС‚Рѕ Р·Р°РїРёСЃРё РІ РєРѕРЅСЃРѕР»СЊ СЃРґРµР»Р°Р»Р° РІС‹Р±СЂРѕСЃ РёСЃРєР»СЋС‡РµРЅРёСЏ
                 if ( parts.Length != 4 )
                 {
                     throw new ArgumentException( "Invalid arguments for 'search'. Expected format: 'search <StartDate> <EndDate> <CategoryName>'" );

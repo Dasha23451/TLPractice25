@@ -1,4 +1,4 @@
-using Accommodations.Models;
+п»їusing Accommodations.Models;
 
 namespace Accommodations.Commands;
 
@@ -17,7 +17,7 @@ public class CancelBookingCommand( IBookingService bookingService, Guid bookingI
         }
         else
         {
-            // Вместо записи в консоль сделала выброс исключения
+            // Р’РјРµСЃС‚Рѕ Р·Р°РїРёСЃРё РІ РєРѕРЅСЃРѕР»СЊ СЃРґРµР»Р°Р»Р° РІС‹Р±СЂРѕСЃ РёСЃРєР»СЋС‡РµРЅРёСЏ
             throw new ArgumentException( $"Booking {bookingId} not found." );
         }
     }

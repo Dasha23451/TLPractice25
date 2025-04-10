@@ -1,4 +1,4 @@
-using Accommodations.Models;
+п»їusing Accommodations.Models;
 
 namespace Accommodations;
 
@@ -30,7 +30,7 @@ public class BookingService : IBookingService
 
         RoomCategory? selectedCategory = _categories.FirstOrDefault( c => c.Name == categoryName );
 
-        // Добавила проверку даты бронирования с днем бронирования (бронь нельзя сделать на число, которое уже прошло)
+        // Р”РѕР±Р°РІРёР»Р° РїСЂРѕРІРµСЂРєСѓ РґР°С‚С‹ Р±СЂРѕРЅРёСЂРѕРІР°РЅРёСЏ СЃ РґРЅРµРј Р±СЂРѕРЅРёСЂРѕРІР°РЅРёСЏ (Р±СЂРѕРЅСЊ РЅРµР»СЊР·СЏ СЃРґРµР»Р°С‚СЊ РЅР° С‡РёСЃР»Рѕ, РєРѕС‚РѕСЂРѕРµ СѓР¶Рµ РїСЂРѕС€Р»Рѕ)
         DateTime todayDate = DateTime.Today;
         if ( startDate < todayDate )
         {
@@ -53,7 +53,7 @@ public class BookingService : IBookingService
             throw new ArgumentException( "User not found" );
         }
 
-        //  Убрала возможность бронирования номера меньше чем на сутки.
+        //  РЈР±СЂР°Р»Р° РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ Р±СЂРѕРЅРёСЂРѕРІР°РЅРёСЏ РЅРѕРјРµСЂР° РјРµРЅСЊС€Рµ С‡РµРј РЅР° СЃСѓС‚РєРё.
         int days = ( endDate - startDate ).Days;
         if ( days == 0 )
         {
@@ -115,7 +115,7 @@ public class BookingService : IBookingService
 
         query = query.Where( b => b.StartDate >= startDate );
 
-        // Исправила сравнение для endDate. Иначе не учитывались брони с конечным числом равным endDate
+        // РСЃРїСЂР°РІРёР»Р° СЃСЂР°РІРЅРµРЅРёРµ РґР»СЏ endDate. РРЅР°С‡Рµ РЅРµ СѓС‡РёС‚С‹РІР°Р»РёСЃСЊ Р±СЂРѕРЅРё СЃ РєРѕРЅРµС‡РЅС‹Рј С‡РёСЃР»РѕРј СЂР°РІРЅС‹Рј endDate
         query = query.Where( b => b.EndDate <= endDate );
 
         if ( !string.IsNullOrEmpty( categoryName ) )
@@ -135,7 +135,7 @@ public class BookingService : IBookingService
 
         int daysBeforeArrival = ( booking.StartDate - DateTime.Now ).Days;
 
-        // Исправила ситуацию, когда отмена брони на завтрашний день вызывала исключение
+        // РСЃРїСЂР°РІРёР»Р° СЃРёС‚СѓР°С†РёСЋ, РєРѕРіРґР° РѕС‚РјРµРЅР° Р±СЂРѕРЅРё РЅР° Р·Р°РІС‚СЂР°С€РЅРёР№ РґРµРЅСЊ РІС‹Р·С‹РІР°Р»Р° РёСЃРєР»СЋС‡РµРЅРёРµ
         if ( daysBeforeArrival > 0 )
         {
             return 5000.0m / daysBeforeArrival;
@@ -162,7 +162,7 @@ public class BookingService : IBookingService
 
     private static decimal CalculateBookingCost( decimal baseRate, int days, int userId, decimal currencyRate )
     {
-        // Исправила расчёт стоимости
+        // РСЃРїСЂР°РІРёР»Р° СЂР°СЃС‡С‘С‚ СЃС‚РѕРёРјРѕСЃС‚Рё
         decimal cost = baseRate * days / currencyRate;
         decimal totalCost = cost - cost * CalculateDiscount();
         return totalCost;

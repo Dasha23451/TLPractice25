@@ -1,0 +1,5 @@
+C:\Users\dvnt\source\repos\TLpractice\HomeTasks\TLPractice25\FightersGame\FightersGame\obj\Debug\net8.0\FightersGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dvnt\source\repos\TLpractice\HomeTasks\TLPractice25\FightersGame\FightersGame\obj\Debug\net8.0\FightersGame.AssemblyInfoInputs.cache
+C:\Users\dvnt\source\repos\TLpractice\HomeTasks\TLPractice25\FightersGame\FightersGame\obj\Debug\net8.0\FightersGame.AssemblyInfo.cs
+C:\Users\dvnt\source\repos\TLpractice\HomeTasks\TLPractice25\FightersGame\FightersGame\obj\Debug\net8.0\FightersGame.csproj.CoreCompileInputs.cache
+C:\Users\dvnt\source\repos\TLpractice\HomeTasks\TLPractice25\FightersGame\FightersGame\obj\Debug\net8.0\FightersGame.sourcelink.json

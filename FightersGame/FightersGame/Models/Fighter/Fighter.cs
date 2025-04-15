@@ -86,9 +86,9 @@ public class Fighter : IFighter
     {
         if ( _weapon is FireEffectDecorator )
         {
-            int burnDamage = 3;
+            int burnDamage = 10;
             target.TakeDamage( burnDamage );
-            Console.WriteLine( $"{target.Name} получает {burnDamage} урона от поджигания!" );
+            Console.WriteLine( $"{target.Name} получает этот урон от поджигания!" );
         }
 
         if ( _weapon is LifestealDecorator lifestealDecorator )
@@ -129,6 +129,8 @@ public class Fighter : IFighter
         {
             Console.WriteLine( $"{Name} погибает!" );
         }
+
+        ApplyClassDefenses( 0 );
     }
 
 
@@ -147,8 +149,20 @@ public class Fighter : IFighter
 
             case Paladin paladin:
                 int healAmount = MaxHealth / 10;
-                _currentHealth = Math.Min( MaxHealth, _currentHealth + healAmount );
-                Console.WriteLine( $"{Name} восстанавливает {healAmount} здоровья!" );
+                if ( ( _currentHealth + healAmount ) < MaxHealth )
+                {
+                    _currentHealth = _currentHealth + healAmount;
+                    Console.WriteLine( $"{Name} восстанавливает {healAmount} здоровья!" );
+                }
+                else
+                {
+                    healAmount = MaxHealth - _currentHealth;
+                    _currentHealth = MaxHealth;
+                    if ( healAmount != 0)
+                    {
+                        Console.WriteLine( $"{Name} восстанавливает {healAmount} здоровья!" );
+                    }
+                }
                 break;
 
             case Mage mage:

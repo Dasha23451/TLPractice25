@@ -1,4 +1,4 @@
-﻿namespace OrderManager
+﻿namespace Order
 {
     public class Order
     {

@@ -59,12 +59,12 @@ public static class AccommodationsProcessor
                 // Добавила проверку даты на валидность
                 if ( !DateTime.TryParse( parts[ 3 ], out startDate ) )
                 {
-                    throw new ArgumentException( "Invalid start date format." );
+                    throw new ArgumentException( $"Invalid start date format {startDate}. Expected format: 'ДД/MM/ГГГГ'" );
                 }
 
                 if ( !DateTime.TryParse( parts[ 4 ], out endDate ) )
                 {
-                    throw new ArgumentException( "Invalid end date format." );
+                    throw new ArgumentException( $"Invalid end date format {endDate}. Expected format: 'ДД/MM/ГГГГ'" );
                 }
 
                 BookingDto bookingDto = new()
@@ -120,7 +120,12 @@ public static class AccommodationsProcessor
                 {
                     throw new ArgumentException( "Invalid arguments for 'find'. Expected format: 'find <BookingId>'" );
                 }
-                Guid id = Guid.Parse( parts[ 1 ] );
+
+                if ( !Guid.TryParse( parts[ 1 ], out Guid id ) )
+                {
+                    throw new ArgumentException( "Invalid number of arguments for canceling." );
+                }
+
                 FindBookingByIdCommand findCommand = new( _bookingService, id );
                 findCommand.Execute();
                 break;
@@ -131,16 +136,22 @@ public static class AccommodationsProcessor
                 {
                     throw new ArgumentException( "Invalid arguments for 'search'. Expected format: 'search <StartDate> <EndDate> <CategoryName>'" );
                 }
-                startDate = DateTime.Parse( parts[ 1 ] );
-                endDate = DateTime.Parse( parts[ 2 ] );
+                if ( !DateTime.TryParse( parts[ 1 ], out startDate ) )
+                {
+                    throw new ArgumentException( "Invalid start date format. Expected format: 'ДД/MM/ГГГГ'" );
+                }
+
+                if ( !DateTime.TryParse( parts[ 2 ], out endDate ) )
+                {
+                    throw new ArgumentException( "Invalid start date format. Expected format: 'ДД/MM/ГГГГ'" );
+                }
                 string categoryName = parts[ 3 ];
                 SearchBookingsCommand searchCommand = new( _bookingService, startDate, endDate, categoryName );
                 searchCommand.Execute();
                 break;
 
             default:
-                Console.WriteLine( "Unknown command." );
-                break;
+                throw new ArgumentException( $"Unknown command {commandName}." );
         }
     }
 }

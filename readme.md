@@ -4,4 +4,8 @@
 
 Выполненные задания:
 
-1. OrderManager
+1. OrderManager(сдано)
+2. Dictionary(сдано)
+3. Debug
+4. Fighter(сдано)
+5. CarFactory

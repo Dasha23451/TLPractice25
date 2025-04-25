@@ -1,46 +1,28 @@
 ﻿using CarFactory.Cars;
-using CarFactory.EnumClass;
+using CarFactory.Color;
+using CarFactory.BodyType;
+using CarFactory.EngineType;
+using CarFactory.TransmissionType;
 
 public class Car : ICar
 {
-    public ColorCar Color { get; }
-    public BodyType Body { get; }
-    public EngineType Engine { get; }
-    public TransmissionType Transmission { get; }
+    public IColor Color { get; }
+    public IBodyType Body { get; }
+    public IEngineType Engine { get; }
+    public ITransmissionType Transmission { get; }
+    public int MaxSpeed => Engine.Speed;
+    public int Gears => Transmission.Transmission;
 
-    public int MaxSpeed { get; }
-    public int Gears { get; }
-
-    public Car( ColorCar color, BodyType body, EngineType engine, TransmissionType transmission )
+    public Car( IColor color, IBodyType body, IEngineType engine, ITransmissionType transmission )
     {
         Color = color;
         Body = body;
         Engine = engine;
         Transmission = transmission;
-
-        MaxSpeed = engine switch
-        {
-            EngineType.V6 => 180,
-            EngineType.V8 => 220,
-            EngineType.Electric => 200,
-            EngineType.Diesel => 160,
-            EngineType.Hybrid => 190,
-            EngineType.Turbo => 210,
-            _ => 0
-        };
-
-        Gears = transmission switch
-        {
-            TransmissionType.Manual => 6,
-            TransmissionType.Automatic => 8,
-            TransmissionType.SemiAutomatic => 7,
-            TransmissionType.CVT => 1,
-            _ => 0
-        };
     }
 
     public string GetConfiguration()
     {
-        return $"Цвет: {Color}, Кузов: {Body}, Двигатель: {Engine}, Коробка передач: {Transmission}, Максимальная скорость: {MaxSpeed} км/ч, Всего передач: {Gears}";
+        return $"Цвет: {Color.Name}, Кузов: {Body.Name}, Двигатель: {Engine.Name}, Коробка передач: {Transmission.Name}, Максимальная скорость: {MaxSpeed} км/ч, Всего передач: {Gears}";
     }
 }

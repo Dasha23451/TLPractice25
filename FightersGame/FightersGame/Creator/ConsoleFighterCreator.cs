@@ -24,7 +24,10 @@ public class ConsoleFighterCreator : IConsoleFighterCreator
         Console.WriteLine( $"\nБоец {name} успешно создан!" );
         fighter.DisplayStats();
     }
-
+    public List<IFighter> GetFighters()
+    {
+        return _fighters.ToList();
+    }
     private IFighterClass ChooseFighterClass()
     {
         bool isValidChoise = false;
@@ -197,7 +200,7 @@ public class ConsoleFighterCreator : IConsoleFighterCreator
         return weapone;
     }
 
-    public IArmor ChooseArmor()
+    private IArmor ChooseArmor()
     {
         IArmor armor = null;
         bool isValidChoise = false;
@@ -250,10 +253,5 @@ public class ConsoleFighterCreator : IConsoleFighterCreator
         }
 
         return armor;
-    }
-
-    public List<IFighter> GetFighters()
-    {
-        return _fighters.ToList();
     }
 }

@@ -6,6 +6,6 @@ public class Plate : BaseArmor
     public override string SpecialEffect => "Блокирует 10% урона";
     public override int CalculateDamageReduction( int incomingDamage )
     {
-        return base.CalculateDamageReduction( incomingDamage ) * 10 / 100;
+        return Math.Abs( base.CalculateDamageReduction( incomingDamage ) ) * 10 / 100;
     }
 }

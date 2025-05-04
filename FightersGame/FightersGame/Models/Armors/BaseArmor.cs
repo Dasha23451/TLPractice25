@@ -8,7 +8,7 @@ public abstract class BaseArmor : IArmor
 
     public virtual int CalculateDamageReduction( int incomingDamage )
     {
-        double reduction = ArmorValue * 0.05;
+        decimal reduction = ArmorValue * 0.05m;
         return ( int )( incomingDamage * ( 1 - reduction ) );
     }
 }

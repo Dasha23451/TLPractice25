@@ -6,6 +6,6 @@ public class CursedArmor : BaseArmor
     public override string SpecialEffect => "Постепенно уменьшает здоровье владельца";
     public override int CalculateDamageReduction( int incomingDamage )
     {
-        return base.CalculateDamageReduction( incomingDamage ) + 10;
+        return Math.Abs( base.CalculateDamageReduction( incomingDamage ) ) + 10;
     }
 }

@@ -7,6 +7,6 @@ public class ScaleMail : BaseArmor
 
     public override int CalculateDamageReduction( int incomingDamage )
     {
-        return base.CalculateDamageReduction( incomingDamage ) * 8 / 10;
+        return Math.Abs( base.CalculateDamageReduction( incomingDamage ) ) * 8 / 10;
     }
 }

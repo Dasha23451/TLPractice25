@@ -1,6 +1,7 @@
 ﻿using Fighters;
 using Fighters.Creator;
 using Fighters.Models.Fighter;
+using FightersGame.Manager;
 
 namespace FightersGame;
 
@@ -8,7 +9,14 @@ public class FighterController
 {
     private List<IFighter> _fighters = new List<IFighter>();
     private readonly IConsoleFighterCreator _consoleFighterCreator = new ConsoleFighterCreator();
-    private readonly GameManager _gameManager = new GameManager();
+    private readonly IGameManager _gameManager = new GameManager();
+
+    public FighterController() { }
+    public FighterController( IConsoleFighterCreator fighterCreator, IGameManager gameManager )
+    {
+        _consoleFighterCreator = fighterCreator;
+        _gameManager = gameManager;
+    }
 
     public void Start()
     {

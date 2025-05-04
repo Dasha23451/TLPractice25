@@ -1,7 +1,7 @@
 ﻿using Fighters.Models.Fighter;
 
-namespace Fighters;
-public class GameManager
+namespace FightersGame.Manager;
+public class GameManager : IGameManager
 {
     public void StartBattle( List<IFighter> fighters )
     {

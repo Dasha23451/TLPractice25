@@ -6,6 +6,7 @@
 
 1. OrderManager(сдано)
 2. Dictionary(сдано)
-3. Debug
-4. Fighter
-5. CarFactory
+3. Debug(сдано)
+4. Fighter(сдано)
+5. CarFactory(сдано)
+6. Tests

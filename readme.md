@@ -4,6 +4,8 @@
 
 Выполненные задания:
 
+**Backend:**
+
 1. OrderManager(сдано)
 2. Dictionary(сдано)
 3. Debug(сдано)
@@ -11,3 +13,8 @@
 5. CarFactory(сдано)
 6. Tests
 7. WebApi
+
+**Frontend:**
+
+1. Json-Diff
+2. ReviewForm

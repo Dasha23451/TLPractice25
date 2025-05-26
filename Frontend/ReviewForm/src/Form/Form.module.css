@@ -1,0 +1,80 @@
+.reviewFormWrapper {
+  width: 550px;
+  height: auto;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+}
+
+.reviewFormContainer {
+  padding: 40px 80px;
+  color: #404040;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  width: 400px;
+  text-align: left;
+  margin: 0;
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.submitButton {
+  width: 140px;
+  align-self: flex-end;
+  background-color: #c0c0c0;
+  color: #ffffff;
+  cursor: not-allowed;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.submitButtonActive {
+  cursor: pointer;
+  background-color: #1e65b7;
+}
+
+.submitButton:hover {
+  background-color: #1a4e8c;
+}
+
+.avatarInput {
+  margin-top: 10px;
+}
+
+.avatarPreview {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.fileInputLabel {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #1964ba;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-block-end: 23px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.fileInputLabel:hover {
+  background-color: #0d2a4c;
+}
+
+.avatarInput {
+  display: none;
+}

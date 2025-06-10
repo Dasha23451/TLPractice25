@@ -1,0 +1,12 @@
+.draggedCard {
+  background-color: white;
+  border-radius: 6px;
+  padding: 12px 15px;
+  width: 250px;
+  border: 1px solid #4a90e2;
+  background-color: #f0f7ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 1000;
+  transform: rotate(3deg);
+}

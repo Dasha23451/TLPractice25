@@ -1,0 +1,11 @@
+.dropIndicator {
+  height: 4px;
+  margin: 5px 0;
+  position: relative;
+}
+
+.indicatorLine {
+  height: 100%;
+  background-color: #4a90e2;
+  border-radius: 2px;
+}

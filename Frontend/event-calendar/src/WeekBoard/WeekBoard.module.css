@@ -1,0 +1,33 @@
+.boardContainer {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.weeksRow {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.taskInput {
+  margin-top: 20px;
+}
+
+.taskInput input {
+  padding: 8px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.taskInput button {
+  padding: 8px 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.taskInput button:hover {
+  background-color: #3a7bc8;
+}

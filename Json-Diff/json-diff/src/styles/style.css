@@ -69,156 +69,117 @@ footer {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  font-size: 2.5rem;
-}
-
-.promo-container p {
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 55vh;
-  text-align: center;
-  white-space: nowrap;
+  justify-content: center;
+  height: 80vh;
+}
+
+.pr.promo-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2d2d2d;
+}
+
+.promo-text {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+
+.promo-line {
+  display: block;
+}
+
+.highlight-red {
+  color: red;
+  font-weight: bold;
+}
+
+.highlight-orange {
+  color: orange;
+  font-weight: bold;
 }
 
 .start-button {
   padding: 0.5rem 1rem;
   color: blue;
-  text-decoration: underline;
   border: none;
   cursor: pointer;
   font-size: 2.5rem;
   text-decoration: none;
   display: inline-block;
   font-weight: bold;
+  background: none;
 }
 
-.login-form {
-  max-width: 400px;
+.form-container {
+  max-width: 600px;
+  width: 100%;
   margin: 0 auto;
   background-color: #fafad2;
   padding: 2rem;
+  border-radius: 8px;
 }
 
-.login-form h2 {
+.form-container h2 {
   margin-bottom: 1.5rem;
   text-align: center;
+  color: #333;
 }
 
 .form-group {
   display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.form-group label {
-  text-align: left;
-  margin-bottom: 0.5rem;
-}
-
-.form-group input {
-  flex: 1;
-  min-height: 40px;
-  border: 1px solid gray;
-  padding: 0.5rem;
-  border-radius: 4px;
-}
-
-.form-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-}
-
-.form-actions button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.login-button {
-  background-color: gray;
-  color: white;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 
-.login-button:hover {
-  background-color: #e0e0e0;
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.login-textarea {
+  width: 100%;
+  min-height: 40px;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none;
+}
+
+.login-textarea:invalid + .error-message {
+  display: block;
 }
 
 .error-message {
   color: #f44336;
   font-size: 0.875rem;
   margin-top: 0.25rem;
+  min-height: 1.2em;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-.json-diff-container {
-  width: 100%;
-  max-width: 1000px;
-  background-color: #fafad2;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.json-diff-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.json-textareas {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-  width: 100%;
-}
-
-.json-textarea-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.json-textarea-container label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  text-align: left;
-  width: 100%;
-}
-
-.json-textarea {
-  width: 100%;
-  min-height: 150px;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: monospace;
-  resize: vertical;
-  margin-left: auto;
-}
-
-.diff-button {
+.submit-button {
   padding: 0.75rem;
-  background-color: gray;
+  background-color: #555;
   color: white;
-  border: 2px solid black;
+  border: none;
   cursor: pointer;
   font-size: 1rem;
-  align-self: flex-start;
   width: 100%;
   border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
-.diff-button:hover {
-  background-color: #ddd;
+.submit-button:hover {
+  background-color: #333;
 }
 
 .diff-result {
@@ -228,25 +189,106 @@ footer {
 
 .diff-result h2 {
   margin-bottom: 1rem;
+  color: #333;
 }
 
 .diff-result pre {
-  background-color: black;
-  color: white;
+  background-color: #1e1e1e;
+  color: #f8f8f8;
   padding: 1rem;
   border-radius: 4px;
   overflow-x: auto;
   white-space: pre-wrap;
+  font-family: "Consolas", monospace;
 }
 
-.json-error {
-  color: #f44336;
-  margin-top: 0.5rem;
+.json-textarea {
+  width: 100%;
+  min-height: 150px;
+  max-height: 400px;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  resize: vertical;
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+  background-color: #f8f8f8;
 }
 
-.section-divider {
-  border: none;
-  height: 1px;
-  background-color: #ddd;
-  margin: 1.5rem 0;
+.json-textarea::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.json-textarea::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.json-textarea::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .promo-container {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .promo-text {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .promo-container {
+    font-size: 2rem;
+  }
+
+  .promo-text {
+    height: 50vh;
+  }
+
+  .start-button {
+    font-size: 1.8rem;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .promo-text {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3em;
+    line-height: 1.2;
+  }
+
+  .promo-line {
+    display: inline;
+    margin: 0.1em 0;
+  }
+
+  promo-line:first-child {
+    margin-bottom: -0.2em;
+  }
+
+  .promo-line:first-child::after {
+    content: " ";
+    white-space: pre;
+  }
 }

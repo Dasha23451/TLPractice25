@@ -31,11 +31,10 @@ function renderPromo() {
 
   let promoHTML = `
     <div class="promo-container">
-      <p>Compare 
-        <span style="color: red; font-weight: bold;">two JSON objects</span> 
-          and see the 
-        <span style="color: orange; font-weight: bold;">differences</span>
-      </p>
+      <div class="promo-text">
+        <div class="promo-line">Compare <span class="highlight-red">two JSON objects</span> and see the</div>
+        <div class="promo-line"><span class="highlight-orange">differences</span></div>
+      </div>
   `;
 
   if (authStatus) {
@@ -49,17 +48,23 @@ function renderPromo() {
 
 function renderLogin() {
   const loginHTML = `
-    <div class="login-form">
+    <div class="form-container">
       <h2>Login Form</h2>
+      <form id="login-form" novalidate>
       <form id="login-form">
         <div class="form-group">
-          <label for="username" style="margin-right: 1rem;">LOGIN</label>
-          <input type="text" id="username" name="username" required>
-          <div id="login-error" class="error-message"></div>
+          <label for="username">LOGIN</label>
+          <textarea 
+          id="username" 
+          name="username" 
+          required
+          rows="1" 
+          class="login-textarea"
+          aria-describedby="username-error"
+        ></textarea>
+          <div id="username-error" class="error-message"></div>
         </div>
-        <div class="form-actions">
-          <button type="submit" class="login-button">SIGN IN</button>
-        </div>
+        <button type="submit" class="submit-button">SIGN IN</button>
       </form>
     </div>
   `;
@@ -68,21 +73,16 @@ function renderLogin() {
 
   const form = document.getElementById("login-form");
   const usernameInput = document.getElementById("username");
-  const errorElement = document.getElementById("login-error");
-
-  usernameInput.addEventListener("input", () => {
-    errorElement.textContent = "";
-  });
+  const errorElement = document.getElementById("username-error");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const username = usernameInput.value.trim();
-
-    console.log(errorElement);
     if (!username) {
-      errorElement.textContent = "Обязательное поле";
+      errorElement.textContent = "Обязательное поле ввода";
       usernameInput.focus();
-      return;
+    } else {
+      errorElement.textContent = "";
     }
 
     if (login(username)) {
@@ -99,21 +99,19 @@ function renderDiff() {
   }
 
   const diffHTML = `
-    <div class="json-diff-container">
+    <div class="form-container">
       <form id="json-diff-form" class="json-diff-form">
-        <div class="json-textareas">
-          <div class="json-textarea-container">
-            <label for="old-json">OLD JSON</label>
-            <textarea id="old-json" class="json-textarea"></textarea>
-            <div id="old-json-error" class="json-error"></div>
-          </div>
-          <div class="json-textarea-container">
-            <label for="new-json">NEW JSON</label>
-            <textarea id="new-json" class="json-textarea"></textarea>
-            <div id="new-json-error" class="json-error"></div>
-          </div>
+        <div class="form-group">
+          <label for="old-json">OLD JSON</label>
+          <textarea id="old-json" class="json-textarea"></textarea>
+          <div id="old-json-error" class="error-message"></div>
         </div>
-        <button type="submit" class="diff-button">SHOW DIFFERENCE</button>
+        <div class="form-group">
+          <label for="new-json">NEW JSON</label>
+          <textarea id="new-json" class="json-textarea"></textarea>
+          <div id="new-json-error" class="error-message"></div>
+        </div>
+        <button type="submit" class="submit-button">SHOW DIFFERENCE</button>
       </form>
       <div id="diff-result" class="diff-result"></div>
     </div>
@@ -137,7 +135,7 @@ function renderDiff() {
     let hasErrors = false;
 
     if (!oldJson) {
-      oldError.textContent = "Некорректный JSON";
+      oldError.textContent = "Обязательное поле";
       hasErrors = true;
     } else {
       try {

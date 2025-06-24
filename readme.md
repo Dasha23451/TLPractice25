@@ -10,8 +10,12 @@
 3. Debug(сдано)
 4. Fighter(сдано)
 5. CarFactory(сдано)
-6. Tests
-7. WebApi
+6. Tests(сдано)
+7. WebApi(сдано)
 
 **Frontend:**
 1. Json-Diff
+2. ReviewFormLayout
+3. EventCalendar
+4. ReviewForm
+5. Currency Exchanger

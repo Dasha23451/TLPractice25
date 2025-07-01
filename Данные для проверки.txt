@@ -1,0 +1,88 @@
+Property
+{
+  "name": "Grand Hotel",
+  "country": "United States",
+  "city": "New York",
+  "address": "123 Broadway",
+  "latitude": 40.7128,
+  "longitude": -74.0060
+},
+{
+  "name": "Seaside Resort",
+  "country": "Spain",
+  "city": "Barcelona",
+  "address": "456 Beach Avenue",
+  "latitude": 41.3851,
+  "longitude": 2.1734
+},
+{
+  "name": "Mountain Lodge",
+  "country": "Switzerland",
+  "city": "Zermatt",
+  "address": "789 Alpine Road",
+  "latitude": 46.0207,
+  "longitude": 7.7491
+}
+
+RoomType
+
+{
+  "name": "Standard Room",
+  "dailyPrice": 120.00,
+  "currency": "USD",
+  "minPersonCount": 1,
+  "maxPersonCount": 2,
+  "services": "WiFi, TV, Air Conditioning",
+  "amenities": "Toiletries, Hair Dryer"
+},
+{
+  "name": "Deluxe Suite",
+  "dailyPrice": 250.00,
+  "currency": "EUR",
+  "minPersonCount": 2,
+  "maxPersonCount": 4,
+  "services": "WiFi, TV, Air Conditioning, Minibar",
+  "amenities": "Toiletries, Hair Dryer, Bathrobes"
+},
+{
+  "name": "Family Room",
+  "dailyPrice": 180.00,
+  "currency": "GBP",
+  "minPersonCount": 3,
+  "maxPersonCount": 5,
+  "services": "WiFi, TV, Air Conditioning",
+  "amenities": "Toiletries, Hair Dryer, Extra Beds"
+},
+
+Reservation
+
+{
+  "propertyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //Это только для примера
+  "roomTypeId": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+  "arrivalDate": "2023-12-15",
+  "departureDate": "2023-12-20",
+  "arrivalTime": "14:00:00",
+  "departureTime": "11:00:00",
+  "guestName": "John Smith",
+  "guestPhoneNumber": "+1 555-123-4567"
+},
+{
+  "propertyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "roomTypeId": "3fa85f64-5717-4562-b3fc-2c963f66afa8",
+  "arrivalDate": "2023-12-22",
+  "departureDate": "2023-12-28",
+  "arrivalTime": "15:00:00",
+  "departureTime": "10:00:00",
+  "guestName": "Maria Garcia",
+  "guestPhoneNumber": "+34 612 345 678"
+},
+{
+  "propertyId": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+  "roomTypeId": "3fa85f64-5717-4562-b3fc-2c963f66afa9",
+  "arrivalDate": "2024-01-05",
+  "departureDate": "2024-01-10",
+  "arrivalTime": "12:00:00",
+  "departureTime": "11:00:00",
+  "guestName": "Li Wei",
+  "guestPhoneNumber": "+86 138 0013 8000"
+},

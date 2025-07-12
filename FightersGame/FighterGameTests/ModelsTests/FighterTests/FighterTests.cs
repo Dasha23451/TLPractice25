@@ -53,7 +53,7 @@ public class FighterTests
     }
 
     [Fact]
-    public void Constructor_InitializesProperties_Correctly()
+    public void Constructor_ValidParameters_InitializesPropertiesCorrectly()
     {
         // Assert
         Assert.Equal( "Fighter1", _fighter.Name );
@@ -65,7 +65,7 @@ public class FighterTests
     }
 
     [Fact]
-    public void Attack_TargetIsAlive_DealsDamage()
+    public void Attack_TargetIsAlive_DealsCorrectDamage()
     {
         var originalOut = Console.Out;
 

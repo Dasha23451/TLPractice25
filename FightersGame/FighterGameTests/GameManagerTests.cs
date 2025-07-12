@@ -3,7 +3,6 @@ using FightersGame.Manager;
 using Moq;
 
 namespace FighterGameTests;
-
 public class GameManagerTests : IDisposable
 {
     private readonly GameManager _gameManager;
@@ -83,6 +82,7 @@ public class GameManagerTests : IDisposable
         }
     }
 
+    [Fact]
     public void StartBattle_ThreeFighters_OnlyOneSurvives()
     {
         // Arrange
@@ -103,6 +103,7 @@ public class GameManagerTests : IDisposable
         Assert.Single( fighters, f => f.IsAlive );
     }
 
+    [Fact]
     public void StartBattle_FighterWithHigherInitiative_AttacksFirst()
     {
         // Arrange
